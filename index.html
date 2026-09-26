@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Minecraft</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Abelha (scroll) -->
+      <div class="divAbelha">
+        <div class="abelha"></div>
+      </div>
+
+      <!-- Seção 1 -->
+      <section class="section1">
+        <div class="section-content">
+          <p>Minecraft explore, construa e transforme seu mundo.</p>
+        </div>
+        <h1 aria-label="Minecraft World">
+          <span class="hero-word" aria-hidden="true">Minecraft</span>
+          <span class="hero-word hero-word-accent" aria-hidden="true"
+            >World</span
+          >
+        </h1>
+      </section>
+
+      <!-- Seção 2 -->
+      <section class="section2">
+        <div class="section2-content">
+          <h2 class="section2-title">Design</h2>
+          <h2>Desenvolvimento</h2>
+          <h2>Mercado</h2>
+        </div>
+      </section>
+
+      <!-- Seção 3 — Steve tela cheia -->
+      <section class="section3">
+        <!-- Canvas ocupa tudo -->
+        <div id="steveContainer"></div>
+
+        <!-- Texto sobreposto no topo -->
+        <div class="section3-overlay">
+          <div class="section-content">
+            <p>Sobre o jogo</p>
+          </div>
+          <h2>Desenvolvido pela<br />Mojang Studios.</h2>
+          <p class="section3-dica">✦ Mova o mouse para interagir</p>
+        </div>
+      </section>
+    </div>
+
+    <!-- Bibliotecas -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollTrigger.min.js"></script>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@latest/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@latest/examples/jsm/"
+        }
+      }
+    </script>
+    <script type="module" src="script.js"></script>
+  </body>
+</html>

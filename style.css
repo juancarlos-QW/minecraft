@@ -1,0 +1,286 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "minecraft";
+  src: url("assets/Minecrafter.Reg.ttf");
+}
+
+/* ── Base ── */
+body {
+  overflow-x: hidden;
+  background: #10170e;
+}
+
+.container {
+  width: 100%;
+  background-image: url("assets/img1.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #f1f1e8;
+}
+
+h1, h2 {
+  font-family: "minecraft", sans-serif;
+  font-weight: 400;
+}
+
+/* ── Barra de progresso (criada pelo JS) ── */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  z-index: 100;
+  background: #a7e76d;
+  box-shadow: 0 0 12px rgba(167, 231, 109, 0.6);
+  transform: scaleX(0);
+  transform-origin: left;
+  pointer-events: none;
+}
+
+/* ── Abelha ── */
+.divAbelha {
+  width: 100vw;
+  position: absolute;
+  height: 200vh;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.abelha {
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* ── Seções base ── */
+section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2vw;
+  position: relative;
+  z-index: 1;
+}
+
+.section-content {
+  max-width: min(90vw, 680px);
+  text-align: center;
+  line-height: 1.5;
+  background: rgba(15, 24, 16, 0.78);
+  padding: clamp(10px, 1vw, 20px) clamp(12px, 1.2vw, 24px);
+  font-size: clamp(14px, 1.2vw, 20px);
+  border: 2px solid rgb(20, 20, 20);
+  box-shadow:
+    3px 3px 0px rgb(112, 112, 112) inset,
+    -3px -3px 0px rgb(54, 54, 54) inset;
+}
+
+/* ── Section 1 ── */
+.section1 {
+  gap: 2vw;
+  padding: 24px;
+  perspective: 1000px;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.section1::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(8, 17, 9, 0.12),
+    rgba(8, 17, 9, 0.2) 45%,
+    rgba(8, 17, 9, 0.78)
+  );
+}
+
+.section1 h1 {
+  width: auto;
+  max-width: 100%;
+  font-size: clamp(42px, 12vw, 180px);
+  line-height: 1.12;
+  transform-origin: center;
+  -webkit-text-stroke: 0.3vw black;
+  text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.6);
+}
+
+.hero-word {
+  display: block;
+}
+
+.hero-word-accent {
+  color: #a7e76d;
+  text-shadow:
+    4px 4px 0 #263d1d,
+    8px 8px 0 rgba(0, 0, 0, 0.45);
+}
+
+/* ── Section 2 ── */
+.section2 {
+  align-items: flex-end;
+  padding: 4vw;
+  overflow: hidden;
+  isolation: isolate;
+  background-image: url("assets/img3.jpeg");
+  background-size: cover;
+  background-position: center;
+}
+
+.section2::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(8, 17, 9, 0.12),
+    rgba(8, 17, 9, 0.2) 45%,
+    rgba(8, 17, 9, 0.78)
+  );
+}
+
+.section2-title { text-align: end; }
+
+.section2-content { width: 100%; }
+
+.section2 h2 {
+  font-size: clamp(28px, 8vw, 106px);
+  line-height: 1.3;
+  -webkit-text-stroke: 0.2vw black;
+  text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.5);
+}
+
+.section2 h2:nth-child(2) { color: #a7e76d; }
+.section2 h2:nth-child(3) { color: #edcf8e; }
+
+.section2-content::after {
+  content: "";
+  display: block;
+  width: 72px;
+  height: 7px;
+  margin: 24px 0 0 auto;
+  background: #a7e76d;
+  box-shadow: -12px 7px 0 #537e35;
+}
+
+/* ══════════════════════════════
+   Section 3 — Steve tela cheia
+══════════════════════════════ */
+.section3 {
+  position: relative;
+  padding: 0;
+  overflow: hidden;
+  cursor: crosshair;
+  min-height: 100svh;
+  touch-action: pan-y;
+}
+
+#steveContainer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin-top: 3rem;
+}
+
+#steveContainer canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
+.section3-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 36px;
+  padding-inline: 16px;
+  gap: 14px;
+  pointer-events: none;
+  text-align: center;
+}
+
+.section3-overlay h2 {
+  font-size: clamp(30px, 10vw, 92px);
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  -webkit-text-stroke: 0.2vw black;
+  text-shadow:
+    4px 4px 0px rgba(0, 0, 0, 0.9),
+    0   0  20px rgba(0, 0, 0, 0.5);
+}
+
+.section3-dica {
+  font-family: sans-serif;
+  font-size: clamp(12px, 1vw, 15px);
+  color: rgba(194, 192, 192, 0.5);
+  letter-spacing: 1px;
+  animation: piscar 2s ease-in-out infinite;
+}
+
+@keyframes piscar {
+  0%, 100% { opacity: 0.4; }
+  50%       { opacity: 1;   }
+}
+
+.steve-loading {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "minecraft", sans-serif;
+  font-size: clamp(14px, 2vw, 22px);
+  color: rgba(194, 192, 192, 0.7);
+  pointer-events: none;
+}
+
+/* ════ TABLET ════ */
+@media (max-width: 900px) {
+  .container { background-attachment: scroll; }
+  .section2 { align-items: center; padding: 24px; }
+  .section2-title { text-align: center; }
+  .section2 h2 { text-align: center; }
+  .section2-content::after { margin-inline: auto; }
+  .section3-overlay { padding-top: 24px; }
+  .section3-overlay h2 { font-size: clamp(22px, 5vw, 48px); }
+}
+
+/* ════ MOBILE ════ */
+@media (max-width: 480px) {
+  section { height: 100svh; }
+  .abelha { height: 100svh; }
+  .section3 { height: 100svh; }
+  .section3-overlay { padding-top: 14px; gap: 8px; }
+  .section3-overlay h2 { font-size: clamp(16px, 5vw, 28px); letter-spacing: 1px; }
+  .section3-dica { font-size: 11px; }
+}
+
+/* ════ ACESSIBILIDADE ════ */
+@media (prefers-reduced-motion: reduce) {
+  .section3-dica { animation: none; opacity: 1; }
+}
