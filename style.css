@@ -284,3 +284,63 @@ section {
 @media (prefers-reduced-motion: reduce) {
   .section3-dica { animation: none; opacity: 1; }
 }
+
+.voltar-topo {
+  position: fixed;
+  margin: 1rem;
+  right: calc(20px + env(safe-area-inset-right, 0px));
+  bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+  z-index: 1000;
+
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+
+  color: #10170e;
+  background: #a7e76d;
+  border: 3px solid #182713;
+  border-radius: 4px;
+
+  box-shadow:
+    inset 3px 3px 0 rgba(255, 255, 255, 0.4),
+    inset -3px -3px 0 #537e35,
+    4px 4px 0 rgba(0, 0, 0, 0.5);
+
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+@media (hover: hover) {
+  .voltar-topo:hover {
+    background: #baf58a;
+    transform: translateY(-4px);
+  }
+}
+
+.voltar-topo:active {
+  transform: translateY(2px);
+}
+
+.voltar-topo:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 5px;
+}
+
+@media (max-width: 480px) {
+  .voltar-topo {
+    width: 48px;
+    height: 48px;
+    right: calc(14px + env(safe-area-inset-right, 0px));
+    bottom: calc(14px + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .voltar-topo {
+    transition: none;
+  }
+}

@@ -471,4 +471,21 @@ document.fonts.ready.then(() => {
 });
 
 
+
+
+
+const botaoVoltarTopo = document.getElementById("voltarTopo");
+
+botaoVoltarTopo.addEventListener("click", () => {
+  const reduzirMovimento = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
+
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: reduzirMovimento ? "instant" : "smooth",
+  });
+});
+
 animarSteve();
