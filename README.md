@@ -1,5 +1,13 @@
 # 🌍 Minecraft World — Landing Page 3D
 
+## 🌐 Projeto online
+
+[🚀 Clique aqui para acessar o Minecraft World](https://juancarlos-qw.github.io/minecraft/)
+
+## 📸 Prévi<img width="1901" height="1215" alt="Captura de tela_28-9-2026_62649_127 0 0 1" src="https://github.com/user-attachments/assets/2e754f29-8855-43cd-a371-189429707827" />
+a do projeto
+
+
 Landing page inspirada no universo de Minecraft, criada para explorar animações de rolagem, modelos 3D e interações com JavaScript.
 
 O projeto combina cenários do jogo, tipografia temática e movimentos que acompanham a navegação para criar uma experiência visual imersiva.
